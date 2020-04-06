@@ -1,6 +1,11 @@
 MIT License
+===========
 
-Copyright (c) 2017 
+**Initial codebase**
+Copyright (c) 2017 freehuntx (https://github.com/freehuntx/frida-inject/)
+
+**Additions**
+Copyright (c) 2020 Northwave B.V. (www.northwave-security.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

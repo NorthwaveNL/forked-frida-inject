@@ -7,7 +7,7 @@ const parentDir = path.dirname(module.parent.parent.filename)
 
 const babelConfig = {
   presets: [require.resolve('babel-preset-env')],
-  plugins: [require.resolve('babel-plugin-transform-object-rest-spread')]
+  plugins: [require.resolve('babel-plugin-transform-object-rest-spread')],
 }
 
 function moduleExists(name) {
@@ -22,7 +22,7 @@ function moduleExists(name) {
 
 function bundleFile(file) {
   return new Promise((resolve, reject) => {
-    Browserify({ debug: true })
+    Browserify({ debug: true, paths: ['./node_modules', `${path.dirname(__filename)}/../../`]})
     .transform(Babelify.configure(babelConfig), { global: true })
     .require(file, { entry: true })
     .bundle((err, buf) => {
