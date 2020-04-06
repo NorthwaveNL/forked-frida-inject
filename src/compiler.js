@@ -22,7 +22,7 @@ function moduleExists(name) {
 
 function bundleFile(file) {
   return new Promise((resolve, reject) => {
-    Browserify({ debug: true, paths: ['./node_modules', `${path.dirname(__filename)}/../../`]})
+    Browserify({ debug: true, paths: ['./node_modules', `${path.dirname(__filename)}/../../`, `${path.dirname(__filename)}/../../../`]})
     .transform(Babelify.configure(babelConfig), { global: true })
     .require(file, { entry: true })
     .bundle((err, buf) => {
